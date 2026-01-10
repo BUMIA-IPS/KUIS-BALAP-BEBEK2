@@ -9,16 +9,26 @@ function playSound(id) {
     if(s) { s.currentTime = 0; s.play().catch(e => {}); }
 }
 
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log("Error Fullscreen");
+        });
+    } else {
+        if (document.exitFullscreen) { document.exitFullscreen(); }
+    }
+}
+
 async function updateSheetID() {
     playSound('snd-click'); 
     let inputID = document.getElementById('sheet-id-input').value.trim();
     const notif = document.getElementById('notif-load');
-    if(!inputID) { notif.innerText = "Masukkan ID Sheet dulu!"; notif.style.color = "red"; return; }
+    if(!inputID) { notif.innerText = "Masukkan ID Sheet!"; notif.style.color = "red"; return; }
     notif.innerText = "Sedang memuat..."; notif.style.color = "blue";
     currentSheetID = inputID;
     const ok = await loadQuestions();
     if(ok) { notif.innerText = "Soal Berhasil Dimuat!"; notif.style.color = "green"; } 
-    else { notif.innerText = "Gagal! Periksa ID atau Izin Sheet."; notif.style.color = "red"; }
+    else { notif.innerText = "Gagal! Periksa ID Sheet."; notif.style.color = "red"; }
 }
 
 async function loadQuestions() {
@@ -43,7 +53,7 @@ function startCountdown() {
     if(raceQuestions.length === 0) {
         loadQuestions().then(ok => {
             if(ok) runCountdownLogic();
-            else alert("Muat soal dulu dengan tombol ENTER!");
+            else alert("Klik ENTER dulu untuk muat soal!");
         });
     } else { runCountdownLogic(); }
 }
