@@ -1,0 +1,36 @@
+body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; font-family: 'Arial Black', sans-serif; }
+#game-container { display: flex; flex-direction: column; height: 100vh; width: 100vw; }
+
+/* Rasio Kolam 60% */
+#pool-area { flex: 60; position: relative; width: 100%; overflow: hidden; }
+.bg-track { width: 100%; height: 100%; object-fit: fill; position: absolute; top: 0; left: 0; }
+.duck { position: absolute; height: 30%; transform: scaleX(-1); transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 10; }
+
+#layar-putih { position: fixed; inset: 0; background: white; z-index: 9999; display: flex; justify-content: center; align-items: center; }
+.container-putih { width: 90%; max-width: 400px; display: flex; flex-direction: column; gap: 5px; align-items: center; text-align: center; }
+.judul-utama { font-size: 2.3rem; color: #28a745; margin: 0; line-height: 1.1; }
+.input-section { display: flex; gap: 5px; width: 100%; margin-top: 5px; }
+.input-section input { flex: 1; padding: 8px; border: 2px solid #28a745; border-radius: 8px; font-size: 13px; }
+.input-section button { padding: 8px 15px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+#notif-load { font-size: 12px; font-weight: bold; margin: 2px 0; height: 15px; }
+
+.btn-mulai-baru { width: 100%; padding: 12px; font-size: 20px; background: #4caf50; color: white; border-radius: 50px; border: none; cursor: pointer; font-weight: bold; margin: 3px 0; box-shadow: 0 4px #2e7d32; }
+.instruksi { text-align: left; background: #f1f8ff; padding: 8px; border-radius: 8px; font-size: 10px; width: 100%; border: 1px solid #cce3f6; line-height: 1.2; }
+.creator-info { margin-top: 8px; font-family: sans-serif; font-weight: bold; font-size: 14px; }
+.socmed-mia { display: flex; gap: 12px; font-size: 12px; margin-top: 2px; }
+
+.fa-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.fa-tiktok { color: #000; }
+
+/* Rasio Soal 40% */
+#player-controls { flex: 40; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 10px; background: #01579b; border-top: 5px solid #ffeb3b; position: relative; }
+.p-box { background: #e3f2fd; border-radius: 12px; padding: 8px; display: flex; flex-direction: column; }
+.p-tag { text-align: center; font-weight: bold; font-size: 14px; color: #01579b; margin-bottom: 5px; }
+.q-box { background: white; flex-grow: 1; margin-bottom: 8px; border-radius: 6px; font-size: 11px; text-align: center; padding: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 1px solid #ccc; overflow-y: auto; }
+.options { display: flex; flex-direction: column; gap: 5px; }
+.opt-btn { padding: 10px; font-size: 10px; cursor: pointer; border: none; border-radius: 5px; background: #ffeb3b; color: #000; font-weight: bold; text-align: left; box-shadow: 0 3px 0 #fbc02d; }
+
+#win-notif { display: none; position: fixed; top: 40%; left: 50%; transform: translate(-50%, -50%); background: #ffeb3b; padding: 30px; border-radius: 20px; border: 6px solid white; text-align: center; z-index: 1000001; box-shadow: 0 0 50px rgba(0,0,0,0.8); color: #000; }
+#reset-button-container { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000005; }
+.btn-ulang { padding: 15px 40px; background: #28a745; color: white; border: 4px solid white; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+#layar-hitam { position: fixed; inset: 0; background: black; color: white; z-index: 10000; display: none; justify-content: center; align-items: center; font-size: 180px; font-weight: bold; }

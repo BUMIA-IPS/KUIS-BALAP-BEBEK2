@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>KUIS BALAP BEBEK - MIA 8</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<audio id="bg-music" loop src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3"></audio>
+<audio id="snd-ok" src="https://www.myinstants.com/media/sounds/quack.mp3"></audio>
+<audio id="snd-no" src="https://www.myinstants.com/media/sounds/err.mp3"></audio>
+<audio id="snd-win" src="https://cdn.pixabay.com/audio/2021/08/04/audio_0625c1539c.mp3"></audio>
+<audio id="snd-countdown" src="https://raw.githubusercontent.com/BUMIA-IPS/coba-2/main/A_single_continuous__%233-1767954251879.mp3" preload="auto"></audio>
+<audio id="snd-click" src="https://www.myinstants.com/media/sounds/button-click_3.mp3"></audio>
+
+<div id="layar-putih">
+    <div class="container-putih">
+        <h1 class="judul-utama">KUIS BALAP BEBEK</h1>
+        <div class="input-section">
+            <input type="text" id="sheet-id-input" placeholder="Tempel ID Sheet di sini...">
+            <button onclick="updateSheetID()">ENTER</button>
+        </div>
+        <p id="notif-load"></p>
+        <button class="btn-mulai-baru" onclick="startCountdown()">Mulai Balapan</button>
+        <div class="instruksi">
+            <p>Cara Mengganti Soal:</p>
+            <ul>
+                <li>Atur Sheet "Siapa saja yang memiliki link".</li>
+                <li>Salin ID Sheet (antara /d/ dan /edit).</li>
+                <li>Tempel ID pada box dan klik ENTER.</li>
+            </ul>
+        </div>
+        <div class="creator-info">
+            <p>Dibuat oleh Zumrotul Ilmiah</p>
+            <div class="socmed-mia">
+                <span><i class="fab fa-instagram"></i> @ilmiahzmr</span>
+                <span><i class="fab fa-tiktok"></i> @avocadochocooooo</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="layar-hitam"><div id="cd-text">3</div></div>
+
+<div id="game-container">
+    <div id="pool-area">
+        <img src="https://raw.githubusercontent.com/BUMIA-IPS/KUIZ-BALAP-BEBEK/main/Gemini_Generated_Image_j3btj2j3btj2j3bt.png" class="bg-track">
+        <img id="d1" class="duck" src="https://raw.githubusercontent.com/BUMIA-IPS/KUIZ-BEBEK-BALAP/main/BEBEK%201.png" style="top: 8%; left: 1%;">
+        <img id="d2" class="duck" src="https://raw.githubusercontent.com/BUMIA-IPS/KUIZ-BEBEK-BALAP/main/BEBEK%202.png" style="top: 23%; left: 1%;">
+        <img id="d3" class="duck" src="https://raw.githubusercontent.com/BUMIA-IPS/KUIZ-BEBEK-BALAP/main/BEBEK%203.png" style="top: 38%; left: 1%;">
+        <img id="d4" class="duck" src="https://raw.githubusercontent.com/BUMIA-IPS/KUIZ-BEBEK-BALAP/main/BEBEK%204.png" style="top: 53%; left: 1%;">
+        <div id="win-notif"><div id="win-text" style="font-size: 24px; font-weight: bold;"></div></div>
+    </div>
+    
+    <div id="player-controls">
+        <div class="p-box"><div class="p-tag">PEMAIN 1</div><div class="q-box" id="q1"></div><div id="opt1" class="options"></div></div>
+        <div class="p-box"><div class="p-tag">PEMAIN 2</div><div class="q-box" id="q2"></div><div id="opt2" class="options"></div></div>
+        <div class="p-box"><div class="p-tag">PEMAIN 3</div><div class="q-box" id="q3"></div><div id="opt3" class="options"></div></div>
+        <div class="p-box"><div class="p-tag">PEMAIN 4</div><div class="q-box" id="q4"></div><div id="opt4" class="options"></div></div>
+    </div>
+
+    <div id="reset-button-container">
+        <button class="btn-ulang" onclick="resetGame()">Mulai Lagi</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
