@@ -11,9 +11,7 @@ function playSound(id) {
 
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(err => {
-            console.log("Error Fullscreen");
-        });
+        document.documentElement.requestFullscreen().catch(err => { console.log("FS Error"); });
     } else {
         if (document.exitFullscreen) { document.exitFullscreen(); }
     }
@@ -42,7 +40,8 @@ async function loadQuestions() {
             a: r.c[1] ? String(r.c[1].v) : "-",
             b: r.c[2] ? String(r.c[2].v) : "-",
             c: r.c[3] ? String(r.c[3].v) : "-",
-            k: r.c[4] ? String(r.c[4].v).toUpperCase().trim() : "A"
+            d: r.c[4] ? String(r.c[4].v) : "-", // Ambil Kolom E
+            k: r.c[5] ? String(r.c[5].v).toUpperCase().trim() : "A" // Ambil Kolom F
         }));
         return true;
     } catch(err) { return false; }
@@ -86,7 +85,9 @@ function updateTampilanSoal(p) {
     document.getElementById("q"+p).innerText = d.q;
     const optArea = document.getElementById("opt" + p);
     optArea.innerHTML = ''; 
-    ['A','B','C'].forEach(l => {
+    
+    // Mendukung 4 pilihan: A, B, C, D
+    ['A','B','C','D'].forEach(l => {
         const btn = document.createElement('button');
         btn.className = 'opt-btn';
         btn.innerText = l + ". " + d[l.toLowerCase()];
